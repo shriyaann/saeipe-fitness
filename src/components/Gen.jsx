@@ -58,7 +58,7 @@ export default function Gen(props) {
                         <button onClick={() => {
                             setMuscles([])
                             setPoison(type)
-                        }} className={'bg-slate-950 border  duration-200 px-4 hover:border-blue-600 py-3 rounded-lg ' + (type === poison ? ' border-blue-600' : ' border-blue-400')} key={typeIndex}>
+                        }} className={'bg-slate-950 border  duration-200 px-4 hover:border-blue-600  py-3 rounded-lg' + (type === poison ? ' border-blue-600' : ' border-blue-400')} key={typeIndex}>
                             <p className='capitalize'>{type.replaceAll('_', " ")}</p>
                         </button>
                     )
@@ -71,7 +71,7 @@ export default function Gen(props) {
                     <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i>
                 </button>
                 {showModal && (
-                    <div className='flex flex-col px-3 pb-3'>
+                    <div className='flex flex-col px-3 pb-3 cursor: pointer'>
                         {(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
                             return (
                                 <button onClick={() => {

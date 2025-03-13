@@ -15,9 +15,21 @@ span {
 
 .blueShadow {
   box-shadow: 3px 3px 0 0 #60a5fa;
+  cursor: pointer;
 }
 
 .blueShadow:hover {
-  transform: translate(-3px, -3px);
+    transform: translate(-3px, -3px);
   box-shadow: 6px 6px 0 0 #60a5fa;
 }
+
+.border-blue-600:focus {
+  background-color: #60a5fa;
+   
+}
+
+.hover\:border-blue-600{
+  cursor: pointer;
+}
+
+
