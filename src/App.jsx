@@ -1,40 +1,43 @@
-import { useState } from 'react'
-import Hero from './components/Hero'
-import Gen from './components/Gen'
-import Workout from './components/Workout'
-import { generateWorkout } from './utils/functions'
+
+import React from 'react'
+import Navbar from "./components/Navbar";
+import Footer from './components/Footer'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import About from "./Pages/About";
+import SignUp from "./Pages/SignUp";
+import ContactUs from './Pages/ContactUs'
+import SignIn from "./Pages/SignIn";
+import CalorieCharts from './Pages/CalorieCharts'
+import WorkoutPlan from './components/Workout/WorkoutPlan';
+import NutritionMeter from "./Pages/NutritionMeter";
 
 
 function App() {
-  const [workout, setWorkout] = useState(null)
-  const [poison, setPoison] = useState('individual')
-  const [muscles, setMuscles] = useState([])
-  const [goal, setGoal] = useState('strength_power')
-
-  function updateWorkout() {
-    if (muscles.length < 1) {
-      return
-    }
-    let newWorkout = generateWorkout({ poison, muscles, goal })
-    setWorkout(newWorkout)
-
-    window.location.href = '#workout'
-  }
-
   return (
     <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base'>
-      <Hero />
-      <Gen
-        poison={poison}
-        setPoison={setPoison}
-        muscles={muscles}
-        setMuscles={setMuscles}
-        goal={goal}
-        setGoal={setGoal}
-        updateWorkout={updateWorkout}
-      />
-      {workout && (<Workout workout={workout} />)}
+      <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/About" element={<About />} />
+                <Route path="/ContactUs" element={<ContactUs />} />
+                {/* <Route path="/CalorieCharts" element={<CalorieCharts />} /> */}
+                <Route path="/WorkoutPlan" element={<WorkoutPlan />} />
+                {/* <Route path="/NutritionMeter" element={<NutritionMeter />} /> */}
+                <Route path="/SignIn" element={<SignIn />} />
+                <Route path="/SignUp"element={<SignUp />}/>
+            </Routes>
+      </Router>
+      
+      
+      <div>       
+        <Footer />
+      </div>
     </main>
+    
   )
 }
 

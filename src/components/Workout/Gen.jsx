@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import SectionWrapper from './SectionWrapper'
-import { SCHEMES, WORKOUTS } from '../utils/exercises'
+import SectionWrapper from '../SectionWrapper'
+import { SCHEMES, WORKOUTS } from '../../utils/exercises'
 import Button from './Button'
 
 function Header(props) {
