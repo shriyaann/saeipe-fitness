@@ -32,7 +32,7 @@ function App() {
             </Routes>
       </Router>
       
-      
+      <WorkoutPlan></WorkoutPlan>
       <div>       
         <Footer />
       </div>
