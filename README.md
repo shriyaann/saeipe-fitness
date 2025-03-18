@@ -1,2 +1,2 @@
 # saeipe-fitness
- Fitness app
+ Fitness app can be accessed at https://saeipe-fitness.netlify.app/
